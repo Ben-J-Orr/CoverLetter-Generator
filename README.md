@@ -6,10 +6,12 @@ This program is designed to automatically generate cover letters for multiple jo
 
 ![Screenshot](https://i.gyazo.com/8cf3c0f2132d604a0aae9498246bc96d.png)
 
-## Features
+## Key Features
 
-- Ability to reference a persons resume to obtain a more personalised result.
-- Able to reference an unlimited number of job adverts
+- **Resume Input**: The program reads your resume from a plain text file, ensuring that it is easy to update and maintain. This allows the AI model to reference your resume when generating cover letters.
+- **Multiple Job Advertisements**: The program supports generating cover letters for multiple job advertisements at once. Simply add your job advertisement text files to the designated folder, and the program will process each one sequentially.
+- **OpenAI GPT-3.5 API**: The program uses the advanced GPT-3.5-turbo AI model from OpenAI to generate high-quality, personalized cover letters that reference both your resume and the specific job advertisement.
+- **Cover Letter Output**: The generated cover letters are saved as separate text files in a designated output folder, making it easy to access, review, and submit them for job applications.
 
 ## Prerequisites
 
