@@ -47,6 +47,8 @@ The GPT-3.5 API accepts plain text input and might not interpret formatting elem
 
 To avoid these issues, consider converting your resume into plain text before using it with this program. Remove any special characters or formatting elements and use plain text to represent your experience, skills, and other relevant information.
 
+Keep in mind that the simpler and cleaner your resume is, the better the AI model will understand it and generate more effective cover letters.
+
 ## Acknowledgements
 
  - [OpenAI](https://github.com/openai/openai-python)
