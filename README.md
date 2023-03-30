@@ -11,7 +11,7 @@ A simple cover letter generator that utilises the ChatGPT API to obtain bespoke 
 
 ## Features
 
-- Ability to reference a person resume to obtain a more personalised result.
+- Ability to reference a persons resume to obtain a more personalised result.
 - Able to reference an unlimited number of job adverts
 
 
@@ -21,11 +21,6 @@ A simple cover letter generator that utilises the ChatGPT API to obtain bespoke 
  - [OpenAI](https://github.com/openai/openai-python)
  - [ChatGPT](https://openai.com/blog/chatgpt)
 
-
-
-## Feedback
-
-If you have any feedback, please reach out.
 
 
 ## License
