@@ -45,7 +45,7 @@ pip install openai
 
 ## Known Issues
 
-GPT-3.5-turbo API accepts plain text input and might not interpret formatting elements as expected. Bullet points, special characters, or other formatting elements might be misinterpreted, resulting in an incorrect understanding of your resume and a less effective cover letter.
+The GPT-3.5 API accepts plain text input and might not interpret formatting elements as expected. Bullet points, special characters, or other formatting elements might be misinterpreted, resulting in an incorrect understanding of your resume and a less effective cover letter.
 
 To avoid these issues, consider converting your resume into plain text before using it with this program. Remove any special characters or formatting elements and use plain text to represent your experience, skills, and other relevant information.
 
