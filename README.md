@@ -1,5 +1,5 @@
 
-# Cover Letter Generator Using ChatGPT
+# Cover Letter Generator Using OpenAI's GPT-3.5 API
 
 This program is designed to automatically generate cover letters for multiple job advertisements using the OpenAI GPT-3.5 API. It reads your resume from a text file, and for each job advertisement, it creates a personalized cover letter referencing your resume and saves it as a separate text file.
 
