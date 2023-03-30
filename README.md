@@ -28,5 +28,5 @@ A simple cover letter generator that utilises the ChatGPT API to obtain bespoke 
 [MIT](https://choosealicense.com/licenses/mit/)
 
 
-![Logo](https://www.techthirsty.com/wp-content/uploads/2022/12/ChatGPT-has-Everybody-Talking-to-it-as-Soon-as-it-was-Launched-by-OpenAI.png)
+![Logo](https://i.imgur.com/BBhcHDx.gif)
 
