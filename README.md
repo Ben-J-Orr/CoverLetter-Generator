@@ -49,12 +49,11 @@ pip install openai
  - [OpenAI](https://github.com/openai/openai-python)
  - [ChatGPT](https://openai.com/blog/chatgpt)
 
+![Logo](https://i.imgur.com/BBhcHDx.gif)
 
 
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
 
-
-![Logo](https://i.imgur.com/BBhcHDx.gif)
 
