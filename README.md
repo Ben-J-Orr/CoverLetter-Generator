@@ -1,7 +1,7 @@
 
 # Cover Letter Generator Using ChatGPT
 
-A simple cover letter generator that utilises the ChatGPT API to obtain bespoke cover letters for multiple job adverts. 
+A basic cover letter generator that uses the ChatGPT API to generate bespoke cover letters for numerous job advertisements while also referencing a candidate's resume. 
 
 
 ## Image
