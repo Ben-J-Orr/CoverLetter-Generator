@@ -11,10 +11,10 @@ A basic cover letter generator that uses the ChatGPT API to generate bespoke cov
 
 ## Usage
 
-- Add all job adverts to their own txt file.
-- Change the content of experience.txt to your resume.
+- Add all job adverts to their own txt file within the "adverts" folder.
+- Change the content of experience.txt within the "resume" folder to your preffered resume.
 - Run main.py
-- The outputted cover letters will be written to a file within the "outputs" folder. 
+- The subsequently outputted cover letters will be written to files within the "outputs" folder. 
 
 ## Features
 
