@@ -4,8 +4,6 @@
 This program is designed to automatically generate cover letters for multiple job advertisements using the OpenAI GPT-3.5 API. It reads your resume from a text file, and for each job advertisement, it creates a personalized cover letter referencing your resume and saves it as a separate text file.
 
 
-## Image
-
 ![Screenshot](https://i.gyazo.com/8cf3c0f2132d604a0aae9498246bc96d.png)
 
 ## Prerequisites
