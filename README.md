@@ -6,6 +6,11 @@ This program is designed to automatically generate cover letters for multiple jo
 
 ![Screenshot](https://i.gyazo.com/8cf3c0f2132d604a0aae9498246bc96d.png)
 
+## Features
+
+- Ability to reference a persons resume to obtain a more personalised result.
+- Able to reference an unlimited number of job adverts
+
 ## Prerequisites
 
 An OpenAI API key is required to use this program. Visit https://beta.openai.com/signup/ to sign up for an API key if you don't have one already.
@@ -35,11 +40,6 @@ pip install openai
 - The program will display the current job advertisement being processed and generate cover letters for each job advertisement.
 - Upon completion, the generated cover letters will be saved in the outputs folder, with filenames corresponding to the respective job advertisement filenames and an _Output.txt suffix.
 - You can now view and use the generated cover letters for your job applications.
-
-## Features
-
-- Ability to reference a persons resume to obtain a more personalised result.
-- Able to reference an unlimited number of job adverts
 
 ## Known Issues
 
