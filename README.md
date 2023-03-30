@@ -15,7 +15,7 @@ An OpenAI API key is required to use this program. Visit https://beta.openai.com
 Ensure you have Python 3.6 or later installed on your system.
 
 Install the openai Python package by running:
-```javascript
+```bash
 pip install openai
 ```
 ## Setup
@@ -31,9 +31,9 @@ pip install openai
 
 - Open a terminal/command prompt and navigate to the directory containing the source code.
 - Run the program using:
-```javascript
-python main.py
-```
+  ```bash
+  python main.py
+  ```
 - The program will display the current job advertisement being processed and generate cover letters for each job advertisement.
 - Upon completion, the generated cover letters will be saved in the outputs folder, with filenames corresponding to the respective job advertisement filenames and an _Output.txt suffix.
 - You can now view and use the generated cover letters for your job applications.
