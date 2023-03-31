@@ -3,7 +3,7 @@ import os
 import openai
 import time
 
-# Function to generate a cover letter using GPT-3.5-turbo
+# Function to generate a cover letter using the GPT-3.5 API
 def generate_cover_letter(experience, job_ad):
     # Combine resume experience and job ad to form content for the AI
     content = ("This is the content of my resume: " + experience + 
