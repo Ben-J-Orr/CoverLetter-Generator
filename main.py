@@ -1,56 +1,62 @@
-# IMPORTS
 import os
 import openai
 import time
+import json
 
-# Function to generate a cover letter using the GPT-3.5 API
+# Read the config file containing API key and additional prompt options
+with open('config.json', 'r') as f:
+    config = json.load(f)
+
+# Function to generate a cover letter given experience and job advertisement
 def generate_cover_letter(experience, job_ad):
-    # Combine resume experience and job ad to form content for the AI
+    additional_prompt_options = config['additional_prompt_options']
     content = ("This is the content of my resume: " + experience + 
                "Write a cover letter for the following job advert: " + 
-               job_ad + " Keep it short. And make reference to my above resume. Include my name at the end. When referencing the job advert, Dont be too literal or too wordy.")
-    
-    # Make an API call to generate the cover letter
+               job_ad + additional_prompt_options)
     completion = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
         messages=[{"role": "user", "content": content}]
     )
     return completion.choices[0].message.content
 
-# Main function
+# Main function to process job advertisements and generate cover letters
 def main():
-    # CONSTANTS
-    API_KEY = "API-KEY"
-    RESUME_PATH = 'resume/experience.txt'
+    # Set the API key for OpenAI
+    openai.api_key = config['api-key']
+    
+    # Define the directories for job advertisements and output
     ADVERTS_DIR = "Adverts/"
     OUTPUT_DIR = "outputs/"
 
-    # Set API key for OpenAI
-    openai.api_key = API_KEY
-
-    # Read resume from the specified file
-    with open(RESUME_PATH, encoding="utf8") as f:
+    # Read the user's experience from a text file
+    with open('resume/experience.txt', encoding="utf8") as f:
         experience = f.read()
 
-    # Loop through all job ads in the specified directory
+    # Start the timer to measure the time taken to process all job ads
     start_time = time.time()
-    for count, filename in enumerate(os.listdir(ADVERTS_DIR), start=1):
+
+    # Create a list of job advertisement filenames in the Adverts directory
+    job_ads = [(count, filename) for count, filename in enumerate(os.listdir(ADVERTS_DIR), start=1)]
+    
+    # Iterate through each job advertisement and generate a cover letter
+    for count, filename in job_ads:
         print(f"Current Job [{count}]: {filename}")
 
-        # Read content of the current job ad
+        # Read the content of the job advertisement
         with open(os.path.join(ADVERTS_DIR, filename)) as f:
             job_ad = f.read()
 
-        # Call generate_cover_letter() function to create a cover letter
-        chat_response = generate_cover_letter(experience, job_ad)
+        # Generate a cover letter using the experience and job advertisement
+        cover_letter = generate_cover_letter(experience, job_ad)
 
-        # Write the generated cover letter to the output directory
+        # Save the generated cover letter in the output directory
         with open(os.path.join(OUTPUT_DIR, f'{filename}_Output.txt'), 'w') as file:
-            file.write(chat_response)
+            file.write(cover_letter)
 
-    # Print completion message and total time taken
-    input(f"\nCompleted all jobs [{count}] in {round((time.time() - start_time),2)} seconds.")
+    # Calculate and display the elapsed time taken to process all job ads
+    elapsed_time = round(time.time() - start_time, 2)
+    input(f"\nCompleted all jobs [{count}] in {elapsed_time} seconds.")
 
-# Execute main function
+# Run the main function
 if __name__ == "__main__":
     main()
