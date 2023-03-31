@@ -1,4 +1,4 @@
 {
-    "api-key" : "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",
+    "api-key" : "api-key",
     "additional_prompt_options": "Keep it short. And make reference to my above resume. Include my name at the end. When referencing the job advert, Dont be too literal or too wordy."
 }
