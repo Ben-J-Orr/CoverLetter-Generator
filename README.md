@@ -27,7 +27,14 @@ pip install openai
 ## Setup
 
 - Clone the repository or download the source code.
-- Replace the API-KEY placeholder in the source code with your actual OpenAI API key.
+- Create a config.json file in the root directory of the project with the following content:
+```json
+{
+  "api-key": "your_openai_api_key",
+  "additional_prompt_options": "optional_additional_prompt_options"
+}
+```
+- Replace your_openai_api_key with your actual OpenAI API key and optional_additional_prompt_options with any additional options you'd like to include in the prompt  (e.g., specific instructions or constraints).
 - Create a folder named resume in the same directory as the source code and add a text file named experience.txt containing your resume. Ensure the text file is UTF-8 encoded.
 - Create a folder named Adverts in the same directory as the source code and add job advertisement text files you want to generate cover letters for.
 - Create a folder named outputs in the same directory as the source code. This is where the generated cover letters will be saved.
