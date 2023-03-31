@@ -12,7 +12,7 @@ This program is designed to automatically generate cover letters for multiple jo
 - **Multiple Job Advertisements**: The program supports generating cover letters for multiple job advertisements at once. Simply add your job advertisement text files to the designated folder, and the program will process each one sequentially.
 - **OpenAI GPT-3.5 API**: The program uses the advanced GPT-3.5-turbo AI model from OpenAI to generate high-quality, personalized cover letters that reference both your resume and the specific job advertisement.
 - **Cover Letter Output**: The generated cover letters are saved as separate text files in a designated output folder, making it easy to access, review, and submit them for job applications.
-- **JSON Config**: Grab your OpenAI API and additional promt parameters from a JSON file. 
+- **JSON Config**: Grab your OpenAI API key and additional promt parameters from a JSON file. 
 
 ## Prerequisites
 
