@@ -191,8 +191,6 @@ class CLGui:
         os_config_dir = appdirs.user_config_dir(appname='.cl_generator')
         os.makedirs(os_config_dir, exist_ok=True)
         self._cfg_path = os.path.join(os_config_dir, self.CONFIG_NAME)
-        print(os_config_dir)
-
         cfg = GuiSettings()
 
         if os.path.exists(self._cfg_path) and os.path.isfile(self._cfg_path):
