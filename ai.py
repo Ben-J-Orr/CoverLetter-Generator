@@ -11,7 +11,6 @@ class GptService:
 
     def generate_cover_letter(self, experience, job_ad, additional_prompt_options=""):
         try:
-            print("Ask  GPT")
             content = (
                 f"This is the content of my resume: {experience} " +
                 f"Write a cover letter for the following job advert: " +
@@ -21,7 +20,6 @@ class GptService:
                 model=self._model,
                 messages=[{"role": "user", "content": content}]
             )
-            print("Answer GPT")
             return completion.choices[0].message.content
         except Exception as e:
             return str(e)
