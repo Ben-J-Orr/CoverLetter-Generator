@@ -1,5 +1,6 @@
 import json
 import os
+import threading
 import tkinter as tk
 from tkinter import ttk, scrolledtext
 
@@ -115,7 +116,9 @@ class CLGui:
         _update_res_msg("Generating a cover letter, please wait...")
 
         vacancy_input_value = vacancy.get("1.0", tk.END).strip()
-        res.after(500, _get_gpt_answer)
+
+        # prevent blocking UI
+        threading.Thread(target=_get_gpt_answer).start()
 
     def _get_text_input(self, parent, value="", readonly=False, height=-1):
         if readonly:
