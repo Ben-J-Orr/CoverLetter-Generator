@@ -1,29 +1,14 @@
 import os
-import openai
 import time
-import json
 
-# Read the config file containing API key and additional prompt options
-with open('config.json', 'r') as f:
-    config = json.load(f)
+from ai import GptService
+from fileutil import read_config_from_file
 
-# Function to generate a cover letter given experience and job advertisement
-def generate_cover_letter(experience, job_ad):
-    additional_prompt_options = config['additional_prompt_options']
-    content = ("This is the content of my resume: " + experience + 
-               "Write a cover letter for the following job advert: " + 
-               job_ad + additional_prompt_options)
-    completion = openai.ChatCompletion.create(
-        model="gpt-3.5-turbo",
-        messages=[{"role": "user", "content": content}]
-    )
-    return completion.choices[0].message.content
 
 # Main function to process job advertisements and generate cover letters
 def main():
     # Set the API key for OpenAI
-    openai.api_key = config['api-key']
-    
+    global config, s
     # Define the directories for job advertisements and output
     ADVERTS_DIR = "Adverts/"
     OUTPUT_DIR = "outputs/"
@@ -37,7 +22,7 @@ def main():
 
     # Create a list of job advertisement filenames in the Adverts directory
     job_ads = [(count, filename) for count, filename in enumerate(os.listdir(ADVERTS_DIR), start=1)]
-    
+
     # Iterate through each job advertisement and generate a cover letter
     for count, filename in job_ads:
         print(f"Current Job [{count}]: {filename}")
@@ -47,7 +32,8 @@ def main():
             job_ad = f.read()
 
         # Generate a cover letter using the experience and job advertisement
-        cover_letter = generate_cover_letter(experience, job_ad)
+        additional_prompt_options = config['additional_prompt_options']
+        cover_letter = s.generate_cover_letter(experience, job_ad, additional_prompt_options)
 
         # Save the generated cover letter in the output directory
         with open(os.path.join(OUTPUT_DIR, f'{filename}_Output.txt'), 'w') as file:
@@ -57,6 +43,12 @@ def main():
     elapsed_time = round(time.time() - start_time, 2)
     input(f"\nCompleted all jobs [{count}] in {elapsed_time} seconds.")
 
+
 # Run the main function
 if __name__ == "__main__":
+    config = read_config_from_file()
+    s = GptService(
+        key=config['api-key'],
+        model="gpt-3.5-turbo"
+    )
     main()
